@@ -19,9 +19,11 @@ async function fetchData(name) {
 
 async function displayAnimal() {
   try {
+    document.getElementById("wait").innerHTML = "Please Wait...";
     const pokiname = document.getElementById("animalname").value.toLowerCase();
     console.log("Fetching data...");
     const animalData = await fetchData(pokiname);
+    document.getElementById("wait").innerHTML = "";
     console.log("animal data retrieved..");
     console.log(animalData);
     const pokemonIMG = animalData.sprites.front_default;
